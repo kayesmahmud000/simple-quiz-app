@@ -9,10 +9,13 @@ class Question {
   Question( this._id, this._title, this._options , this._answer);
 
 int get id => _id;
-  String get title=> _title;
-  List<String> get options=> _options;
-  Answer get answer =>_answer;
+  // String get title=> _title;
+  // List<String> get options=> _options;
+  // Answer get answer =>_answer;
 
+bool isCorrect(int userAnsIdx){
+  return _answer.answerIdx == userAnsIdx;
+}
   @override
   String toString() {
 

@@ -1,9 +1,5 @@
 class Answer {
-  int _qsId;
-  int _answerIdx;
+  int answerIdx;
 
-  Answer(this._qsId ,this._answerIdx);
-
-  int get qsId=> _qsId;
-  int get answerIdx=>_answerIdx;
+  Answer(this.answerIdx);
 }

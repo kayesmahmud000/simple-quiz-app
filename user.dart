@@ -1,5 +1,6 @@
- class User {
-  String name;
+ class UserAnswer {
+  final int questionId;
+  final int selectedIdx;
 
-  User(this.name);
+  UserAnswer(this.questionId, this.selectedIdx);
  }

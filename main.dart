@@ -1,24 +1,28 @@
 import 'answer.dart';
+import 'engine.dart';
+import 'extend.dart';
 import 'question.dart';
 import 'quiz.dart';
+import 'result.dart';
+import 'user.dart';
 
 void main(){
    List<Question> questionList = [
-    Question(1, "What is the capital of Bangladesh", ["Dhaka","Chittagong","Rajshahi","Rangpur"], Answer(1, 0),),
-    Question(2, "What is the Name of Bangladesh Ex PM?", ["Sk", "Pk", "Ck", "Tk"],Answer(2, 1),)
+    Question(1, "What is the capital of Bangladesh", ["Dhaka","Chittagong","Rajshahi","Rangpur"], Answer(1),),
+    Question(2, "What is the Name of Bangladesh Ex PM?", ["Sk", "Pk", "Ck", "Tk"],Answer(2),)
   ];
 
-  // List<Answer> answerList =[
-  //   Answer(1, 0),
-  //   Answer(2, 1)
-  // ];
+List<UserAnswer> userAnswer =[
+  UserAnswer(1, 4),
+  UserAnswer(2, 5),
+];
 
-  Quiz quiz =Quiz();
+  QuizEngine quiz =SimpleQuiz(questionList, userAnswer);
 
- questionList.forEach((qs)=>quiz.addQuestion(qs));
-//  answerList.forEach((ans)=>quiz.addAnswer(ans));
+  Result result = quiz.run();
+  print(result);
 
- quiz.showQuestions();
- quiz.startQuiz();
+//  quiz.showQuestions();
+//  quiz.startQuiz();
 
 }
