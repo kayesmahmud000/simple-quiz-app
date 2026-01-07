@@ -12,8 +12,8 @@ void main(){
   
   // books
   Book book1 = Book(1, 'Clean Code', author);
-  Book book2 = Book(2, 'The Alchemist', Author(2, "ADfg"));
-  Book book3 = Book(3, 'Atomic Habits',  Author(3, "ADfg") );
+  Book book2 = Book(2, 'The Alchemist', Author(2, "James Kim"));
+  Book book3 = Book(3, 'Atomic Habits',  Author(3, "Clear James") );
 
   library.addBook(book1);
   library.addBook(book2);
@@ -30,15 +30,9 @@ void main(){
  
   print('\n');
 library.borrowBook(user1.id, book1.id);
-// library.borrowBook(user2.id, book2.id);
+library.borrowBook(user2.id, book2.id);
 
-  // print('\n');
-  // user2.borrow(book2);
-
-  // print('\n');
-  // user3.borrow(book1);
-
-  // library.displayAvailableBook();
+  library.displayAvailableBook();
 
   library.returnBook(book1.id, user1.id);
 
