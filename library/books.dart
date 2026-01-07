@@ -1,37 +1,20 @@
+import 'author.dart';
+
 class Book {
   int _id;
   String _title;
-  String _author;
-  bool _isAvailable;
+  Author _author;
 
-  Book(this._id, this._title, this._author) : _isAvailable = true;
+  Book(this._id, this._title, this._author) ;
 
   int get id => _id;
   String get title => _title;
-  String get author => _author;
-  bool get isAvailable => _isAvailable;
+  Author get author => _author;
 
-  void borrowBook(){
-    if(_isAvailable){
-      _isAvailable = false;
-      print('${_title} has been borrowed');
-    }else{
-      print('${_title} is currently unavailable');
-    }
-  }
-
-  void returnBook (){
-    if(!_isAvailable){
-      _isAvailable = true;
-      print('${_title}has been returned');
-    }else{
-      print('${_title} war not borrowed in the first place');
-    }
-  }
 
   @override
   String toString() {
 
-    return 'Title: ${_title} , Author : $_author, Id: $_id , Available: $isAvailable';
+    return 'Title: ${_title} , Author : ${_author.name}, Id: $_id ';
   }
 }

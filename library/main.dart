@@ -6,18 +6,18 @@ import 'user.dart';
 void main(){
   Library library = Library();
  
-  Author author = Author(1, 'James Clear', 'author');
+  Author author = Author(1, 'James Clear');
 
 
   
   // books
-  Book book1 = Book(1, 'Clean Code', 'Robert C. Martin');
-  Book book2 = Book(2, 'The Alchemist', 'Paulo Coelho');
-  Book book3 = Book(3, 'Atomic Habits', 'James Clear');
+  Book book1 = Book(1, 'Clean Code', author);
+  Book book2 = Book(2, 'The Alchemist', Author(2, "ADfg"));
+  Book book3 = Book(3, 'Atomic Habits',  Author(3, "ADfg") );
 
-  library.addBook(book1, author);
-  library.addBook(book2, author);
-  library.addBook(book3, author);
+  library.addBook(book1);
+  library.addBook(book2);
+  library.addBook(book3);
 
   // users
   User user1 = User(1, 'Jon Due');
@@ -29,8 +29,8 @@ void main(){
   library.addUser(user3);
  
   print('\n');
-  user1.borrow(book1);
-  user2.borrow(book1);
+library.borrowBook(user1.id, book1.id);
+// library.borrowBook(user2.id, book2.id);
 
   // print('\n');
   // user2.borrow(book2);
@@ -40,7 +40,7 @@ void main(){
 
   // library.displayAvailableBook();
 
-  // user1.returnBook(book3);
+  library.returnBook(book1.id, user1.id);
 
   library.displayAvailableBook();
 } 
