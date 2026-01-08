@@ -1,15 +1,21 @@
+class  Palindrome{
+bool isPalindrome( int x){
+    int reverse =0;
+    int number= x;
 
-import 'dart:io';
+    while( number !=0){
+        int lastNumber =number % 10;
+          reverse =(reverse* 10)+lastNumber;
+          number ~/ 10;
+    }
+    return true;
+      
+  
 
+}
+}
 void main(){
-   stdout.write("What's your name? ");
-    String name = stdin.readLineSync()!;
-
-
-     print("Hi, $name! What is your age?");
-    int age = int.parse(stdin.readLineSync()!);
-
-    int yearsOfHanded = 100-age;
-
-    print("$name You have $yearsOfHanded years to be 100 ");
+   Palindrome palindrome =Palindrome();
+   var p =palindrome.isPalindrome(245);
+  print( p);
 }
